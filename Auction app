@@ -1,0 +1,41 @@
+from replit import clear
+
+
+logo = '''
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\\
+                       .-------------.
+                      /_______________\\
+'''
+
+
+print(logo)
+
+other_bids = True
+
+
+while other_bids == True:
+  name = input("What is your name?\n")
+  bid_price = input("What is your bid?\n")
+
+  all_bids= {}
+  all_bids[name] = bid_price
+  next_bid = input("Are there more users who want to bid? Enter yes or no.")
+  if next_bid == "no":
+    other_bids = False
+    highest_bid = 0
+    for bid in all_bids:
+      
+      if int(all_bids[name]) > highest_bid:
+        highest_bid = all_bids[name]
+        bidder=name
+    print(f"You are the winner {name} with a bid of {highest_bid}")    
+  if next_bid == "yes":
+    clear()
